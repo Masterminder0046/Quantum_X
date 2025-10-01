@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QUANTUM X 2K25</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: black;
+  color: white;
+  overflow-x: hidden;
+}
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+  transition: opacity 0.8s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+.logo {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+.logo.small {
+  width: 120px;
+}
+
+.quote {
+  font-size: 1.2em;
+  color: #bb86fc;
+  margin-bottom: 30px;
+}
+
+.buttons button,
+.register-all {
+  background: #bb86fc;
+  border: none;
+  padding: 12px 24px;
+  margin: 10px;
+  font-size: 1em;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 2px solid #bb86fc;
+  padding: 20px;
+  border-radius: 12px;
+  font-size: 1.2em;
+  cursor: pointer;
+  width: 250px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #bb86fc;
+}
+
+#eventCards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.event-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 2px solid #bb86fc;
+  padding: 15px;
+  border-radius: 10px;
+  width: 250px;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.event-card button {
+  margin-top: 10px;
+  background: #03dac6;
+  border: none;
+  padding: 8px 16px;
+  color: black;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.info {
+  margin-top: 30px;
+  font-size: 0.9em;
+  color: #ccc;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .card, .event-card {
+    width: 90%;
+  }
+
+  .logo {
+    width: 150px;
+  }
+
+  .buttons button {
+    width: 80%;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
+
+  <!-- Page 1: Landing -->
+  <section class="page" id="page1">
+    <img src="assets/1.png" alt="Quantum X Logo" class="logo" />
+    <h1 class="college">ST. ANNE’S COLLEGE OF ENGINEERING AND TECHNOLOGY</h1>
+    <p class="quote">“Innovate. Compete. Conquer – Welcome to the Future of Tech!”</p>
+    <div class="buttons">
+      <button onclick="goToPage(2)">Explore Events</button>
+      <button onclick="register()">Register Now</button>
+    </div>
+  </section>
+
+  <!-- Page 2: Event Categories -->
+  <section class="page hidden" id="page2">
+    <img src="assets/1.png" alt="Quantum X Logo" class="logo small" />
+    <h2>Choose Your Category</h2>
+    <div class="card-container">
+      <div class="card" onclick="showEvents('tech')">💻 Technical Events</div>
+      <div class="card" onclick="showEvents('nontech')">🎭 Non-Technical Events</div>
+    </div>
+    <button class="register-all" onclick="register()">Register Now for All Events</button>
+  </section>
+
+  <!-- Page 3: Event Listing -->
+  <section class="page hidden" id="page3">
+    <h2 id="eventTitle">Events</h2>
+    <div id="eventCards"></div>
+    <button class="register-all" onclick="register()">Register Now for All Events</button>
+    <div class="info">
+      <p><strong>Registration Fee:</strong> Rs.150/-</p>
+      <p><strong>On-Spot Registration:</strong> Available</p>
+      <p><strong>Venue:</strong> ST. ANNE’S COLLEGE OF ENGINEERING AND TECHNOLOGY, Panruti - 607 106</p>
+      <p><strong>Contact:</strong></p>
+      <ul>
+        <li>Mr. S. Sheik Mohamed – 7708182774</li>
+        <li>Ms. S. Snekha – 6381654176</li>
+        <li>Mr. R. Giridharan – 6369566698</li>
+        <li>Ms. I. Dharani</li>
+      </ul>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script src="script.js"></script>
+</body>
+<script>
+    function goToPage(pageNum) {
+  document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
+  document.getElementById(`page${pageNum}`).classList.remove('hidden');
+}
+
+function register() {
+  window.open("https://docs.google.com/forms/d/e/1FAIpQLSfhLbMMX4hRCJpzAP_ZWs5opN-26fmrR2gLgqTOCy7WlJhBjA/viewform?usp=dialog", "_blank");
+}
+
+function showEvents(type) {
+  goToPage(3);
+  const tech = ["TechScribe (Paper Presentation)", "BugSlayers (Debugging)", "DesignX (Web Design)", "TechQuest (Tech Quiz)"];
+  const nontech = ["Link-o-Logic (Connection)", "Adovation (Adzap)", "WordWar (Group Discussion)", "LogoMania (Logo Designing)"];
+  const events = type === "tech" ? tech : nontech;
+  document.getElementById("eventTitle").textContent = type === "tech" ? "Technical Events" : "Non-Technical Events";
+  const container = document.getElementById("eventCards");
+  container.innerHTML = "";
+  events.forEach(event => {
+    const card = document.createElement("div");
+    card.className = "event-card";
+    card.innerHTML = `<h3>${event}</h3><button onclick="register()">Register</button>`;
+    container.appendChild(card);
+  });
+}
+
+// GSAP Animations
+window.onload = () => {
+  gsap.from(".logo", { duration: 3, scale: 0.8, opacity: 0 });
+  gsap.from(".college", { duration: 1, y: -50, opacity: 0, delay: 0.5 });
+  gsap.from(".quote", { duration: 1, y: 50, opacity: 0, delay: 1 });
+  gsap.from(".buttons", { duration: 1, scale: 0.9, opacity: 0, delay: 1.5 });
+};
+
+// Particle.js Config
+particlesJS('particles-js',{
+  "particles": {"number":{"value":50,"density":{"enable":true,"value_area":800}},
+  "color":{"value":["#7c3aed","#06b6d4","#ffffff"]},
+  "shape":{"type":"circle"},
+  "opacity":{"value":0.7,"random":true},
+  "size":{"value":3,"random":true},
+  "line_linked":{"enable":true,"distance":120,"color":"#ffffff","opacity":0.06,"width":1},
+  "move":{"enable":true,"speed":1.2,"direction":"none","out_mode":"bounce"}},
+  "interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"}},
+  "modes":{"repulse":{"distance":100},"push":{"particles_nb":4}}},"retina_detect":true
+});
+</script>
+</html>
