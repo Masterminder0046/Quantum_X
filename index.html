@@ -307,8 +307,8 @@ function showEvents(type) {
   goToPage(3);
   const tech = ["TechScribe (Paper Presentation)", "BugSlayers (Debugging)", "DesignX (Web Design)", "TechQuest (Tech Quiz)"];
   const nontech = ["Link-o-Logic (Connection)", "Adovation (Adzap)", "WordWar (Group Discussion)", "LogoMania (Logo Designing)"];
-  const events = type === "tech" ? tech : nontech;
-  document.getElementById("eventTitle").textContent = type === "tech" ? "Technical Events" : "Non-Technical Events";
+  const events = type === "tech" ? tech: nontech;
+  document.getElementById("eventTitle").textContent = type === "tech" ? "Technical Events": "Non-Technical Events";
   const container = document.getElementById("eventCards");
   container.innerHTML = "";
   events.forEach(event => {
@@ -331,12 +331,12 @@ window.onload = () => {
 particlesJS('particles-js',{
   "particles": {"number":{"value":50,"density":{"enable":true,"value_area":800}},
   "color":{"value":["#7c3aed","#06b6d4","#ffffff"]},
-  "shape":{"type":"circle"},
-  "opacity":{"value":0.7,"random":true},
-  "size":{"value":3,"random":true},
-  "line_linked":{"enable":true,"distance":120,"color":"#ffffff","opacity":0.06,"width":1},
-  "move":{"enable":true,"speed":1.2,"direction":"none","out_mode":"bounce"}},
-  "interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"}},
+  "shape":{"type":  "circle"},
+  "opacity":{"value":0.7, "random": true},
+  "size":{"value":3,  "random":  true},
+  "line_linked":{"enable":  true,  "distance":120, "color":"#ffffff",  "opacity":0.06,  "width":1},
+  "move": {{"enable":  true,  "speed":1.2, "direction": "none"  ,"out_mode":  "bounce"}},
+  "interactivity":{"detect_on":  "canvas", "events":{"onhover":{"enable":  true,  "mode":  "repulse"},  "onclick":{"enable":  true,  "mode": "push"}},
   "modes":{"repulse":{"distance":100},"push":{"particles_nb":4}}},"retina_detect":true
 });
   function goBack() {
@@ -353,6 +353,7 @@ particlesJS('particles-js',{
 
 </script>
 </html>
+
 
 
 
