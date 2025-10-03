@@ -339,20 +339,11 @@ particlesJS('particles-js',{
   "interactivity":{"detect_on":  "canvas", "events":{"onhover":{"enable":  true,  "mode":  "repulse"},  "onclick":{"enable":  true,  "mode": "push"}},
   "modes":{"repulse":{"distance":100},"push":{"particles_nb":4}}},"retina_detect":true
 });
-  function goBack() {
-  const pages = document.querySelectorAll('.page');
-  const visiblePage = Array.from(pages).find(p => !p.classList.contains('hidden'));
-  const currentId = visiblePage.id;
 
-  if (currentId === "page3") {
-    goToPage(2);
-  } else if (currentId === "page2") {
-    goToPage(1);
-  }
-}
 
 </script>
 </html>
+
 
 
 
