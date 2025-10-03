@@ -522,7 +522,22 @@ function showEvents(type) {
     container.appendChild(card);
   });
 }
+function goToPage(pageNumber) {
+  const pages = document.querySelectorAll('.page');
+  pages.forEach((page, index) => {
+    page.classList.toggle('hidden', index !== pageNumber - 1);
+  });
+}
 
+function goBack() {
+  const pages = document.querySelectorAll('.page');
+  const visiblePage = Array.from(pages).find(p => !p.classList.contains('hidden'));
+  const currentIndex = Array.from(pages).indexOf(visiblePage);
+
+  if (currentIndex > 0) {
+    goToPage(currentIndex); // Go to previous page (1-based index)
+  }
+}
 // GSAP Animations
 window.onload = () => {
   gsap.from(".logo", { duration: 3, scale: 0.8, opacity: 0 });
@@ -546,6 +561,7 @@ particlesJS('particles-js',{
 </script>
 </body>
 </html>
+
 
 
 
