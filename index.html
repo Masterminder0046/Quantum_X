@@ -144,6 +144,26 @@ button:hover {
     width: 80%;
   }
 }
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  color: #bb86fc;
+  font-size: 0.9em;
+  border-top: 1px solid #bb86fc;
+  animation: fadeInFooter 1s ease-in;
+}
+
+.footer span {
+  font-weight: bold;
+  color: #03dac6;
+}
+
+@keyframes fadeInFooter {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
   </style>
 </head>
@@ -191,6 +211,9 @@ button:hover {
       </ul>
     </div>
   </section>
+<footer class="footer">
+  <p>Developed with 💻 by <span>@Sheik Mohamed</span></p>
+</footer>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
@@ -244,5 +267,6 @@ particlesJS('particles-js',{
 });
 </script>
 </html>
+
 
 
