@@ -5,15 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>QUANTUM X 2K25</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<style>
+    /* General Reset */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: 'Segoe UI', sans-serif;
-  background: black;
-  color: white;
+}
+
+body {
+  background-color: #121212;
+  color: #fff;
   overflow-x: hidden;
 }
 
+/* Particle Background */
 #particles-js {
   position: fixed;
   width: 100%;
@@ -21,203 +29,73 @@
   z-index: -1;
 }
 
+/* Logo */
+.logo {
+  width: 120px;
+  margin: 20px auto;
+  display: block;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #03dac6;
+}
+
+.logo.small {
+  width: 80px;
+}
+
+/* Page Layout */
 .page {
+  padding: 40px 20px;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  padding: 20px;
-  text-align: center;
-  transition: opacity 0.8s ease;
+  animation: fadeIn 1s ease-in;
 }
 
 .hidden {
   display: none;
 }
 
-.logo {
-  width: 200px;
-  margin-bottom: 20px;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.logo.small {
-  width: 120px;
+/* Landing Page */
+.college {
+  font-size: 1.4em;
+  text-align: center;
+  margin-top: 10px;
+  color: #bb86fc;
 }
 
 .quote {
-  font-size: 1.2em;
-  color: #bb86fc;
-  margin-bottom: 30px;
+  font-size: 1em;
+  margin: 20px 0;
+  text-align: center;
+  color: #ccc;
 }
 
-.buttons button,
-.register-all {
-  background: #bb86fc;
-  border: none;
-  padding: 12px 24px;
+.buttons button {
   margin: 10px;
-  font-size: 1em;
-  color: white;
+  padding: 12px 24px;
+  background: #03dac6;
+  color: black;
+  border: none;
   border-radius: 8px;
+  font-weight: bold;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
 
-button:hover {
-  transform: scale(1.1);
-}
-
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 2px solid #bb86fc;
-  padding: 20px;
-  border-radius: 12px;
-  font-size: 1.2em;
-  cursor: pointer;
-  width: 250px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.card:hover {
+.buttons button:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px #bb86fc;
+  background: #bb86fc;
+  color: white;
 }
 
-#eventCards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin: 20px 0;
-}
-
-.event-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 2px solid #bb86fc;
-  padding: 15px;
-  border-radius: 10px;
-  width: 250px;
-  animation: fadeIn 0.5s ease forwards;
-}
-
-.event-card button {
-  margin-top: 10px;
-  background: #03dac6;
-  border: none;
-  padding: 8px 16px;
-  color: black;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.info {
-  margin-top: 30px;
-  font-size: 0.9em;
-  color: #ccc;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 600px) {
-  .card, .event-card {
-    width: 90%;
-  }
-
-  .logo {
-    width: 150px;
-  }
-
-  .buttons button {
-    width: 80%;
-  }
-}
-.footer {
-  width: 100%;
-  padding: 20px;
-  background: linear-gradient(to right, #1f1f1f, #2c2c2c);
-  color: #bb86fc;
-  text-align: center;
-  border-top: 2px solid #bb86fc;
-  position: relative;
-  z-index: 10;
-}
-
-.footer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  animation: fadeInFooter 1s ease-in;
-}
-
-.footer span {
-  color: #03dac6;
-  font-weight: bold;
-}
-
-.back-btn {
-  background: transparent;
-  border: 2px solid #03dac6;
-  color: #03dac6;
-  padding: 8px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.9em;
-  transition: all 0.3s ease;
-}
-
-.back-btn:hover {
-  background: #03dac6;
-  color: black;
-  transform: scale(1.05);
-}
-
-
-.footer {
-  width: 100%;
-  padding: 20px;
-  background: linear-gradient(to right, #1f1f1f, #2c2c2c);
-  color: #bb86fc;
-  text-align: center;
-  border-top: 2px solid #bb86fc;
-  position: relative;
-  z-index: 10;
-}
-
-.footer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  animation: fadeInFooter 1s ease-in;
-}
-
-.footer span {
-  color: #03dac6;
-  font-weight: bold;
-}
-
-
-
-
-@keyframes fadeInFooter {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
+/* Back Button */
 .back-icon {
   position: absolute;
   top: 20px;
@@ -243,14 +121,298 @@ button:hover {
   margin-right: 8px;
 }
 
-  </style>
+/* Cards */
+.card-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  padding: 20px;
+  border-radius: 12px;
+  color: #03dac6;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 200px;
+  text-align: center;
+  box-shadow: 0 0 10px #03dac6;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #bb86fc;
+}
+
+/* Event Cards */
+#eventCards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.event-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  padding: 20px;
+  border-radius: 12px;
+  color: #fff;
+  width: 250px;
+  box-shadow: 0 0 10px #03dac6;
+  transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px #bb86fc;
+}
+
+.event-card h3 {
+  color: #03dac6;
+  margin-bottom: 10px;
+}
+
+.event-card p {
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+.event-card button {
+  background: #03dac6;
+  color: black;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.event-card button:hover {
+  background: #bb86fc;
+  color: white;
+}
+
+/* Info Section */
+.info {
+  margin-top: 30px;
+  text-align: center;
+  color: #ccc;
+}
+
+.info p {
+  margin: 6px 0;
+}
+
+/* Poster Section */
+.poster-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.poster-img {
+  max-width: 90%;
+  height: auto;
+  border: 2px solid #bb86fc;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #bb86fc;
+  transition: transform 0.3s ease;
+}
+
+.poster-img:hover {
+  transform: scale(1.03);
+}
+
+.download-btn {
+  background: #03dac6;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.download-btn:hover {
+  background: #bb86fc;
+  color: white;
+}
+
+/* Footer */
+.footer {
+  background: linear-gradient(to right, #1f1f1f, #2c2c2c);
+  color: #bb86fc;
+  padding: 30px 20px;
+  font-size: 0.9em;
+  border-top: 2px solid #bb86fc;
+  animation: fadeInFooter 1s ease-in;
+}
+
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+  text-align: left;
+}
+
+.footer-section h3 {
+  color: #03dac6;
+  margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section ul {
+  margin: 0;
+  color: #ccc;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section li {
+  margin: 6px 0;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  color: #bb86fc;
+  font-size: 1.5em;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #03dac6;
+}
+
+.footer-tagline {
+  text-align: center;
+  margin-top: 30px;
+  color: #888;
+}
+
+@keyframes fadeInFooter {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer-grid {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card-container,
+  #eventCards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-icons a {
+    margin: 0 8px;
+  }
+  .social-icons a .fa-instagram:hover {
+  color: #e1306c;
+  text-shadow: 0 0 10px #e1306c;
+}
+
+}
+    .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    }
+    .register-all {
+  background: linear-gradient(135deg, #03dac6, #bb86fc);
+  color: black;
+  padding: 14px 28px;
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 15px #03dac6;
+  transition: all 0.3s ease;
+  margin-top: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.register-all:hover {
+  background: linear-gradient(135deg, #bb86fc, #03dac6);
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #bb86fc;
+}
+@media (max-width: 600px) {
+  .logo {
+    width: 80px;
+  }
+
+  .college {
+    font-size: 1.1em;
+  }
+
+  .quote {
+    font-size: 0.9em;
+  }
+
+  .buttons button,
+  .register-all {
+    width: 90%;
+    font-size: 0.9em;
+  }
+
+  .card-container,
+  #eventCards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .event-card {
+    width: 90%;
+  }
+
+  .poster-img {
+    max-width: 100%;
+  }
+
+  .footer-grid {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .social-icons a {
+    margin: 0 8px;
+  }
+
+  .back-icon {
+    top: 10px;
+    left: 10px;
+    padding: 8px 12px;
+    font-size: 0.9em;
+  }
+}
+
+</style>
 </head>
 <body>
-  <!-- Particle Background -->
   <div id="particles-js"></div>
-<div class="back-icon" onclick="goBack()">
-  <i class="fas fa-arrow-left"></i> Back
-</div>
 
   <!-- Page 1: Landing -->
   <section class="page" id="page1">
@@ -260,14 +422,13 @@ button:hover {
     <div class="buttons">
       <button onclick="goToPage(2)">Explore Events</button>
       <button onclick="register()">Register Now</button>
+      <button onclick="goToPage(4)">View Poster</button>
     </div>
   </section>
 
   <!-- Page 2: Event Categories -->
   <section class="page hidden" id="page2">
-      <div class="back-icon" onclick="goBack()">
-    <i class="fas fa-arrow-left"></i> Back
-  </div>
+    <div class="back-icon" onclick="goBack()"><i class="fas fa-arrow-left"></i> Back</div>
     <img src="1.png" alt="Quantum X Logo" class="logo small" />
     <h2>Choose Your Category</h2>
     <div class="card-container">
@@ -278,62 +439,66 @@ button:hover {
   </section>
 
   <!-- Page 3: Event Listing -->
-  
   <section class="page hidden" id="page3">
-      <div class="back-icon" onclick="goBack()">
-    <i class="fas fa-arrow-left"></i> Back
-  </div>
+    <div class="back-icon" onclick="goBack()"><i class="fas fa-arrow-left"></i> Back</div>
     <h2 id="eventTitle">Events</h2>
     <div id="eventCards"></div>
     <button class="register-all" onclick="register()">Register Now for All Events</button>
     <div class="info">
-      <p><strong>Registration Fee:</strong> Rs.150/-</p>
-      <p><strong>On-Spot Registration:</strong> Available</p>
-      <p><strong>Venue:</strong> ST. ANNE’S COLLEGE OF ENGINEERING AND TECHNOLOGY, Panruti - 607 106</p>
-      <p><strong>Contact:</strong></p>
-      
-    
-  </section>
-  
-<footer class="footer">
-  <div class="footer-grid">
-    <!-- Developer Credit -->
-    <div class="footer-section">
-      <h3><i class="fas fa-code"></i> Developed by</h3>
-      <p>@Sheik Mohamed</p>
+      <p><i class="fas fa-indian-rupee-sign"></i> Registration Fee: Rs.150/-</p>
+      <p><i class="fas fa-calendar-check"></i> On-Spot Registration: Available</p>
+      <p><i class="fas fa-location-dot"></i> Venue: ST. ANNE’S COLLEGE OF ENGINEERING AND TECHNOLOGY, Panruti - 607 106</p>
+      <p><i class="fas fa-envelope"></i> Email: quantumx.2k25@gmail.com</p>
     </div>
+  </section>
 
-    <!-- Social Media -->
-    <div class="footer-section">
-      <h3><i class="fas fa-share-alt"></i> Connect</h3>
-      <div class="social-icons">
-        <a href="https://github.com/Masterminder0046" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:quantumx.2k25@gmail.com"><i class="fas fa-envelope"></i></a>
+  <!-- Page 4: Poster -->
+  <section class="page hidden" id="page4">
+    <div class="back-icon" onclick="goBack()"><i class="fas fa-arrow-left"></i> Back</div>
+    <h2>Official A2 Poster</h2>
+    <div class="poster-container">
+      <img src="1.jpg" alt="Quantum X 2K25 A2 Poster" class="poster-img" />
+      <a href="1.jpg" download class="download-btn">
+        <i class="fas fa-download"></i> Download Poster
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h3><i class="fas fa-code"></i> Developed by</h3>
+        <p>@Sheik Mohamed</p>
+      </div>
+      <div class="footer-section">
+        <h3><i class="fas fa-share-alt"></i> Connect</h3>
+        <div class="social-icons">
+          <a href="" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:quantumx.2k25@gmail.com"><i class="fas fa-envelope"></i></a>
+          <a href=" https://www.instagram.com/quantum_2k25?utm_source=qr&igsh=ODB6bzFqbHlnOWRo" target="_blank">
+  <i class="fab fa-instagram"></i>
+</a>
+
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3><i class="fas fa-users"></i> Coordinators</h3>
+        <ul>
+          <li><i class="fas fa-user"></i> S. Sheik Mohamed – <i class="fas fa-phone"></i> 7708182774</li>
+          <li><i class="fas fa-user"></i> S. Snekha – <i class="fas fa-phone"></i> 6381654176</li>
+          <li><i class="fas fa-user"></i> R. Giridharan – <i class="fas fa-phone"></i> 6369566698</li>
+          <li><i class="fas fa-user"></i> I. Dharani - <i class="fas fa-phone"></i> 944245877</li>
+        </ul>
       </div>
     </div>
-
-    <!-- Coordinators -->
-    <div class="footer-section">
-      <h3><i class="fas fa-users"></i>Student Coordinators</h3>
-      <ul>
-        <li><i class="fas fa-user"></i> S. Sheik Mohamed – <i class="fas fa-phone"></i> 7708182774</li>
-        <li><i class="fas fa-user"></i> S. Snekha – <i class="fas fa-phone"></i> 6381654176</li>
-        <li><i class="fas fa-user"></i> R. Giridharan – <i class="fas fa-phone"></i> 6369566698</li>
-        <li><i class="fas fa-user"></i> I. Dharani - <i class="fas fa-phone"></i> 944245877</li>
-      </ul>
-    </div>
-  </div>
-  <p class="footer-tagline">© 2025 QUANTUM X 2K25 | All rights reserved</p>
-</footer>
-
+    <p class="footer-tagline">© 2025 QUANTUM X 2K25 | All rights reserved</p>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-  <script src="script.js"></script>
-</body>
-<script>
-    function goToPage(pageNum) {
+  <script>    function goToPage(pageNum) {
   document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
   document.getElementById(`page${pageNum}`).classList.remove('hidden');
 }
@@ -346,8 +511,8 @@ function showEvents(type) {
   goToPage(3);
   const tech = ["TechScribe (Paper Presentation)", "BugSlayers (Debugging)", "DesignX (Web Design)", "TechQuest (Tech Quiz)"];
   const nontech = ["Link-o-Logic (Connection)", "Adovation (Adzap)", "WordWar (Group Discussion)", "LogoMania (Logo Designing)"];
-  const events = type === "tech" ? tech: nontech;
-  document.getElementById("eventTitle").textContent = type === "tech" ? "Technical Events": "Non-Technical Events";
+  const events = type === "tech" ? tech : nontech;
+  document.getElementById("eventTitle").textContent = type === "tech" ? "Technical Events" : "Non-Technical Events";
   const container = document.getElementById("eventCards");
   container.innerHTML = "";
   events.forEach(event => {
@@ -370,33 +535,14 @@ window.onload = () => {
 particlesJS('particles-js',{
   "particles": {"number":{"value":50,"density":{"enable":true,"value_area":800}},
   "color":{"value":["#7c3aed","#06b6d4","#ffffff"]},
-  "shape":{"type":  "circle"},
-  "opacity":{"value":0.7, "random": true},
-  "size":{"value":3,  "random":  true},
-  "line_linked":{"enable":  true,  "distance":120, "color":"#ffffff",  "opacity":0.06,  "width":1},
-  "move": {{"enable":  true,  "speed":1.2, "direction": "none"  ,"out_mode":  "bounce"}},
-  "interactivity":{"detect_on":  "canvas", "events":{"onhover":{"enable":  true,  "mode":  "repulse"},  "onclick":{"enable":  true,  "mode": "push"}},
+  "shape":{"type":"circle"},
+  "opacity":{"value":0.7,"random":true},
+  "size":{"value":3,"random":true},
+  "line_linked":{"enable":true,"distance":120,"color":"#ffffff","opacity":0.06,"width":1},
+  "move":{"enable":true,"speed":1.2,"direction":"none","out_mode":"bounce"}},
+  "interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"}},
   "modes":{"repulse":{"distance":100},"push":{"particles_nb":4}}},"retina_detect":true
 });
-function goBack() {
-  const pages = document.querySelectorAll('.page');
-  const visiblePage = Array.from(pages).find(p => !p.classList.contains('hidden'));
-  const currentId = visiblePage.id;
-
-  if (currentId === "page3") {
-    goToPage(2);
-  } else if (currentId === "page2") {
-    goToPage(1);
-  }
-}
-
-
 </script>
+</body>
 </html>
-
-
-
-
-
-
-
