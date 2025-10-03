@@ -145,25 +145,93 @@ button:hover {
   }
 }
 .footer {
-  text-align: center;
+  width: 100%;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(6px);
+  background: linear-gradient(to right, #1f1f1f, #2c2c2c);
   color: #bb86fc;
-  font-size: 0.9em;
-  border-top: 1px solid #bb86fc;
+  text-align: center;
+  border-top: 2px solid #bb86fc;
+  position: relative;
+  z-index: 10;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
   animation: fadeInFooter 1s ease-in;
 }
 
 .footer span {
-  font-weight: bold;
   color: #03dac6;
+  font-weight: bold;
+}
+
+.back-btn {
+  background: transparent;
+  border: 2px solid #03dac6;
+  color: #03dac6;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #03dac6;
+  color: black;
+  transform: scale(1.05);
+}
+
+
+.footer {
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to right, #1f1f1f, #2c2c2c);
+  color: #bb86fc;
+  text-align: center;
+  border-top: 2px solid #bb86fc;
+  position: relative;
+  z-index: 10;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  animation: fadeInFooter 1s ease-in;
+}
+
+.footer span {
+  color: #03dac6;
+  font-weight: bold;
+}
+
+.back-btn {
+  background: transparent;
+  border: 2px solid #03dac6;
+  color: #03dac6;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #03dac6;
+  color: black;
+  transform: scale(1.05);
 }
 
 @keyframes fadeInFooter {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
 
   </style>
 </head>
@@ -212,8 +280,14 @@ button:hover {
     </div>
   </section>
 <footer class="footer">
-  <p>Developed with 💻 by <span>@Sheik Mohamed</span></p>
+  <div class="footer-content">
+    <p><i class="fas fa-code"></i> Developed with passion by <span>@Sheik Mohamed</span></p>
+    <button class="back-btn" onclick="goBack()">
+      <i class="fas fa-arrow-left"></i> Back
+    </button>
+  </div>
 </footer>
+
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
@@ -265,8 +339,21 @@ particlesJS('particles-js',{
   "interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"}},
   "modes":{"repulse":{"distance":100},"push":{"particles_nb":4}}},"retina_detect":true
 });
+  function goBack() {
+  const pages = document.querySelectorAll('.page');
+  const visiblePage = Array.from(pages).find(p => !p.classList.contains('hidden'));
+  const currentId = visiblePage.id;
+
+  if (currentId === "page3") {
+    goToPage(2);
+  } else if (currentId === "page2") {
+    goToPage(1);
+  }
+}
+
 </script>
 </html>
+
 
 
 
