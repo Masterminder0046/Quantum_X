@@ -210,34 +210,47 @@ button:hover {
   font-weight: bold;
 }
 
-.back-btn {
-  background: transparent;
-  border: 2px solid #03dac6;
-  color: #03dac6;
-  padding: 8px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.9em;
-  transition: all 0.3s ease;
-}
 
-.back-btn:hover {
-  background: #03dac6;
-  color: black;
-  transform: scale(1.05);
-}
+
 
 @keyframes fadeInFooter {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
+.back-icon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  padding: 10px 16px;
+  border-radius: 8px;
+  color: #03dac6;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.back-icon:hover {
+  background: #03dac6;
+  color: black;
+  transform: scale(1.05);
+}
+
+.back-icon i {
+  margin-right: 8px;
+}
 
   </style>
 </head>
 <body>
   <!-- Particle Background -->
   <div id="particles-js"></div>
+<div class="back-icon" onclick="goBack()">
+  <i class="fas fa-arrow-left"></i> Back
+</div>
 
   <!-- Page 1: Landing -->
   <section class="page" id="page1">
@@ -252,6 +265,9 @@ button:hover {
 
   <!-- Page 2: Event Categories -->
   <section class="page hidden" id="page2">
+      <div class="back-icon" onclick="goBack()">
+    <i class="fas fa-arrow-left"></i> Back
+  </div>
     <img src="1.png" alt="Quantum X Logo" class="logo small" />
     <h2>Choose Your Category</h2>
     <div class="card-container">
@@ -262,7 +278,11 @@ button:hover {
   </section>
 
   <!-- Page 3: Event Listing -->
+  
   <section class="page hidden" id="page3">
+      <div class="back-icon" onclick="goBack()">
+    <i class="fas fa-arrow-left"></i> Back
+  </div>
     <h2 id="eventTitle">Events</h2>
     <div id="eventCards"></div>
     <button class="register-all" onclick="register()">Register Now for All Events</button>
@@ -271,21 +291,40 @@ button:hover {
       <p><strong>On-Spot Registration:</strong> Available</p>
       <p><strong>Venue:</strong> ST. ANNE’S COLLEGE OF ENGINEERING AND TECHNOLOGY, Panruti - 607 106</p>
       <p><strong>Contact:</strong></p>
+      
+    
+  </section>
+  
+<footer class="footer">
+  <div class="footer-grid">
+    <!-- Developer Credit -->
+    <div class="footer-section">
+      <h3><i class="fas fa-code"></i> Developed by</h3>
+      <p>@Sheik Mohamed</p>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-section">
+      <h3><i class="fas fa-share-alt"></i> Connect</h3>
+      <div class="social-icons">
+        <a href="https://github.com/Masterminder0046" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:quantumx.2k25@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+
+    <!-- Coordinators -->
+    <div class="footer-section">
+      <h3><i class="fas fa-users"></i>Student Coordinators</h3>
       <ul>
-        <li>Mr. S. Sheik Mohamed – 7708182774</li>
-        <li>Ms. S. Snekha – 6381654176</li>
-        <li>Mr. R. Giridharan – 6369566698</li>
-        <li>Ms. I. Dharani</li>
+        <li><i class="fas fa-user"></i> S. Sheik Mohamed – <i class="fas fa-phone"></i> 7708182774</li>
+        <li><i class="fas fa-user"></i> S. Snekha – <i class="fas fa-phone"></i> 6381654176</li>
+        <li><i class="fas fa-user"></i> R. Giridharan – <i class="fas fa-phone"></i> 6369566698</li>
+        <li><i class="fas fa-user"></i> I. Dharani - <i class="fas fa-phone"></i> 944245877</li>
       </ul>
     </div>
-  </section>
-<footer class="footer">
-  <div class="footer-content">
-    <p><i class="fas fa-code"></i> Developed with passion by <span>@Sheik Mohamed</span></p>
-    <button class="back-btn" onclick="goBack()">
-      <i class="fas fa-arrow-left"></i> Back
-    </button>
   </div>
+  <p class="footer-tagline">© 2025 QUANTUM X 2K25 | All rights reserved</p>
 </footer>
 
 
@@ -339,10 +378,22 @@ particlesJS('particles-js',{
   "interactivity":{"detect_on":  "canvas", "events":{"onhover":{"enable":  true,  "mode":  "repulse"},  "onclick":{"enable":  true,  "mode": "push"}},
   "modes":{"repulse":{"distance":100},"push":{"particles_nb":4}}},"retina_detect":true
 });
+function goBack() {
+  const pages = document.querySelectorAll('.page');
+  const visiblePage = Array.from(pages).find(p => !p.classList.contains('hidden'));
+  const currentId = visiblePage.id;
+
+  if (currentId === "page3") {
+    goToPage(2);
+  } else if (currentId === "page2") {
+    goToPage(1);
+  }
+}
 
 
 </script>
 </html>
+
 
 
 
