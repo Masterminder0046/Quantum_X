@@ -510,7 +510,7 @@ function register() {
 function showEvents(type) {
   goToPage(3);
   const tech = ["TechScribe (Paper Presentation)", "BugSlayers (Debugging)", "DesignX (Web Design)", "TechQuest (Tech Quiz)"];
-  const nontech = ["Link-o-Logic (Connection)", "Adovation (Adzap)", "WordWar (Group Discussion)", "LogoMania (Logo Designing)"];
+  const nontech = ["Link-o-Logic (Connection)", "Headshot Havoc (Free Fire)", "WordWar (Group Discussion)", "LogoMania (Logo Designing)"];
   const events = type === "tech" ? tech : nontech;
   document.getElementById("eventTitle").textContent = type === "tech" ? "Technical Events" : "Non-Technical Events";
   const container = document.getElementById("eventCards");
@@ -561,6 +561,7 @@ particlesJS('particles-js',{
 </script>
 </body>
 </html>
+
 
 
 
