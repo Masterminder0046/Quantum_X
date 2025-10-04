@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QUANTUM X 2K25 Registration</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .input-field {
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: #111827;
+  width: 100%;
+  transition: border 0.3s ease;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 10px #c4b5fd;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+.animate-slide-up {
+  animation: slideUp 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.form-banner {
+  width: 100%;
+  max-width: 1600px;
+  height: auto;
+  aspect-ratio: 4 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+}
+.hidden {
+  display: none;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+.bubble-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+}
+
+.form-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  background: transparent;
+}
+.bubble {
+  position: absolute;
+  bottom: -50px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: rgba(98, 0, 255, .6);
+  animation: floatBubble 20s infinite ease-in-out;
+}
+
+.bubbles::before,
+.bubbles::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(173, 216, 230, 0.4);
+  animation: floatBubble 12s infinite ease-in-out;
+}
+
+.bubbles::before {
+  width: 20px;
+  height: 20px;
+  left: 20%;
+  bottom: -40px;
+  animation-delay: 0s;
+}
+
+.bubbles::after {
+  width: 30px;
+  height: 30px;
+  left: 70%;
+  bottom: -60px;
+  animation-delay: 3s;
+}
+
+@keyframes floatBubble {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-200px) scale(1.2);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-400px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+
+  </style>
+</head>
+<body class="bg-gradient-to-br from-white to-gray-100 text-gray-800 font-sans">
+
+  <!-- Header -->
+  <header class="text-center py-8 px-4">
+   <img src="banner.png" alt="Symposium Banner" class="form-banner" />
+    <h1 class="text-3xl font-bold mt-6 text-indigo-600">ST. ANNE’S COLLEGE OF ENGINEERING AND TECHNOLOGY</h1>
+    <p class="mt-2 text-lg text-gray-600">Department of COMPUTER SCIENCE ENGINEERING <br> Proudly conducts</p>
+    <h2 class="text-4xl font-extrabold text-pink-500 mt-2">(QUANTUM X 2K25)</h2>
+    <p class="mt-4 text-sm text-gray-500 italic">🎉 Join us on a thrilling journey at SANCET</p>
+  </header>
+
+  <!-- Description -->
+  <section class="max-w-4xl mx-auto px-4 py-6 bg-white rounded-xl shadow-md animate-slide-up">
+    <p><i class="bi bi-calendar-event-fill text-indigo-500"></i> <strong>Event Date:</strong> 16TH OCTOBER 2025</p>
+    <p><i class="bi bi-geo-alt-fill text-indigo-500"></i> <strong>Event Address:</strong>  ST. ANNE’S COLLEGE OF ENGINEERING AND TECHNOLOGY
+Anguchettypalayam, Panruti - 607 106</p>
+    <p><i class="bi bi-clock-fill text-indigo-500"></i> <strong>Last Date:</strong> 14TH OCTOBER 2025</p>
+    <p><i class="bi bi-currency-rupee text-indigo-500"></i> <strong>Fee:</strong> Rs.150/-</p>
+    <p><i class="bi bi-person-check-fill text-indigo-500"></i> On Spot Registration Available</p>
+    <p><i class="bi bi-envelope-fill text-indigo-500"></i> quantumx.2k25@gmail.com</p>
+    <p><i class="bi bi-telephone-fill text-indigo-500"></i> Student Coordinators:</p>
+    <ul class="list-disc list-inside text-sm text-gray-700">
+      <li>Mr. S. Sheik Mohamed – 7708182774</li>
+      <li>Ms. S. Snekha – 6381654176</li>
+      <li>Mr. R. Giridharan – 6369566698</li>
+      <li>Ms. I. Dharani - 944245877</li>
+    </ul>
+  </section>
+
+  <!-- Registration Form -->
+   <div class="bubble-wrapper">
+  <div class="bubbles"></div>
+  <form class="max-w-4xl mx-auto px-4 py-8 mt-8 bg-white rounded-xl shadow-xl animate-fade-in" id="registrationForm">
+    <h3 class="text-2xl font-bold text-center text-pink-500 mb-6">Event Registration Form</h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <input type="text" placeholder="👤 Full Name" class="input-field" required />
+      <input type="email" placeholder="📧 Email Address" class="input-field" required />
+      <input type="text" placeholder="🏫 College Name" class="input-field" required />
+      <input type="tel" placeholder="📱 Mobile Number" class="input-field" required />
+      <select class="input-field" required>
+        <option value="">🏷️ Select Department</option>
+  <option>Computer Science and Engineering</option>
+  <option>Electronics and Communication Engineering</option>
+  <option>Electrical and Electronics Engineering</option>
+  <option>Mechanical Engineering</option>
+  <option>Civil Engineering</option>
+  <option>Artificial Intelligence and Data Science</option>
+  <option>Artificial Intelligence and Machine Learning</option>
+  <option>Other</option> </select>
+      <select class="input-field" required>
+        <option value="">🎓 Year of Study</option>
+        <option>I</option><option>II</option><option>III</option><option>IV</option>
+      </select>
+    </div>
+
+    <h4 class="text-xl font-semibold mt-8 text-indigo-600">🧠 Technical Events (Choose up to 2)</h4>
+    <div class="grid grid-cols-2 gap-4 mt-2 text-sm">
+      <label><input type="checkbox" value="TechScribe" /> TechScribe (Paper Presentation)</label>
+      <label><input type="checkbox" value="BugSlayers" /> BugSlayers (Debugging)</label>
+      <label><input type="checkbox" value="DesignX" /> DesignX  (Web Design)</label>
+      <label><input type="checkbox" value="TechQuest" /> TechQuest (Tech Quiz)</label>
+    </div>
+
+    <h4 class="text-xl font-semibold mt-6 text-indigo-600">🎭 Non-Technical Events (Choose up to 2)</h4>
+    <div class="grid grid-cols-2 gap-4 mt-2 text-sm">
+      <label><input type="checkbox" value="Link-o-Logic" /> Link-o-Logic (Connection)</label>
+      <label><input type="checkbox" value="Adovation" /> Headshot Havoc (Free Fire)  </label>
+      <label><input type="checkbox" value="WordWar" /> WordWar ( Group Discussion)</label>
+      <label><input type="checkbox" value="LogoMania" /> LogoMania (Logo Designing)</label>
+    </div>
+
+    <h4 class="text-xl font-semibold mt-6 text-indigo-600">🍽️ Food Preference</h4>
+    <div class="flex gap-6 mt-2 text-sm">
+      <label><input type="radio" name="food" value="Veg" required /> Veg</label>
+      <label><input type="radio" name="food" value="Non-Veg" /> Non-Veg</label>
+    </div>
+
+    <h4 class="text-xl font-semibold mt-6 text-yellow-600">🔑 Unlock Your Gateway to Quantum X 2K25 – Pay Now!</h4>
+    <div class="mt-4">
+      <img src="pay.jpg" alt="Payment QR" class="w-48 mx-auto rounded-lg shadow-md" />
+      <p class="text-sm text-center mt-2 text-gray-500">Scan & Pay ₹150 to register</p>
+      <p class="text-sm text-center mt-1 text-gray-500"> Account Number - 6147833964<br>Bank IFSC - IDIB000T047<br>Account Holder Name - SHIEK MOHAMED</p>
+    </div>
+
+    <div class="mt-6">
+      <label class="block mb-2 text-sm font-medium text-gray-700">📤 Upload Payment Screenshot</label>
+      <input type="file" accept="image/*" class="input-field" required />
+    </div>
+
+    <button type="submit" class="mt-8 w-full py-3 bg-pink-500 hover:bg-pink-600 text-white font-bold rounded-lg transition-all duration-300">
+      🚀 Submit Registration
+    </button>
+  </form>
+<section id="successPage" class="hidden text-center py-20 px-6 animate-fade-in">
+  <h2 id="greeting" class="text-4xl font-bold text-pink-500 mb-4"></h2>
+  <p class="text-lg text-gray-700">🎉 You’ve successfully registered for QUANTUM X 2K25!</p>
+  <p class="mt-2 text-sm text-gray-500">We’ll see you on <strong>October 16th</strong> at SANCET!</p>
+ <a href="https://quantum-x2k25.netlify.app/" class="mt-6 inline-block px-6 py-3 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition-all">
+  🔙 Back to Home
+</a>
+
+</section>
+
+  <script >
+ document.getElementById("registrationForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = document.querySelector('input[type="text"]').value;
+  document.getElementById("registrationForm").classList.add("hidden");
+
+  const greeting = document.getElementById("greeting");
+  greeting.innerHTML = `Welcome, <span class="text-indigo-600">${name}</span>!`;
+
+  document.getElementById("successPage").classList.remove("hidden");
+
+  // Optional: Add confetti or particle animation here
+});
+
+function goToHome() {
+  document.getElementById("successPage").classList.add("hidden");
+  document.getElementById("registrationForm").classList.remove("hidden");
+}
+const bubbleContainer = document.querySelector('.bubbles');
+for (let i = 0; i < 20; i++) {
+  const bubble = document.createElement('div');
+  bubble.className = 'bubble';
+  bubble.style.left = `${Math.random() * 100}%`;
+  bubble.style.animationDelay = `${Math.random() * 10}s`;
+  bubbleContainer.appendChild(bubble);
+}
+
+  </script>
+</body>
+</html>
