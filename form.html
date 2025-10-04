@@ -79,66 +79,6 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-.bubbles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  pointer-events: none;
-  background: transparent;
-}
-.bubble {
-  position: absolute;
-  bottom: -50px;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: rgba(98, 0, 255, .6);
-  animation: floatBubble 20s infinite ease-in-out;
-}
-
-.bubbles::before,
-.bubbles::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(173, 216, 230, 0.4);
-  animation: floatBubble 12s infinite ease-in-out;
-}
-
-.bubbles::before {
-  width: 20px;
-  height: 20px;
-  left: 20%;
-  bottom: -40px;
-  animation-delay: 0s;
-}
-
-.bubbles::after {
-  width: 30px;
-  height: 30px;
-  left: 70%;
-  bottom: -60px;
-  animation-delay: 3s;
-}
-
-@keyframes floatBubble {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 0.6;
-  }
-  50% {
-    transform: translateY(-200px) scale(1.2);
-    opacity: 0.3;
-  }
-  100% {
-    transform: translateY(-400px) scale(0.8);
-    opacity: 0;
-  }
-}
-
 
   </style>
 </head>
@@ -172,8 +112,7 @@ Anguchettypalayam, Panruti - 607 106</p>
   </section>
 
   <!-- Registration Form -->
-   <div class="bubble-wrapper">
-  <div class="bubbles"></div>
+  
   <form class="max-w-4xl mx-auto px-4 py-8 mt-8 bg-white rounded-xl shadow-xl animate-fade-in" id="registrationForm">
     <h3 class="text-2xl font-bold text-center text-pink-500 mb-6">Event Registration Form</h3>
 
@@ -265,14 +204,7 @@ function goToHome() {
   document.getElementById("successPage").classList.add("hidden");
   document.getElementById("registrationForm").classList.remove("hidden");
 }
-const bubbleContainer = document.querySelector('.bubbles');
-for (let i = 0; i < 20; i++) {
-  const bubble = document.createElement('div');
-  bubble.className = 'bubble';
-  bubble.style.left = `${Math.random() * 100}%`;
-  bubble.style.animationDelay = `${Math.random() * 10}s`;
-  bubbleContainer.appendChild(bubble);
-}
+
 
   </script>
 </body>
